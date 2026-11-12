@@ -48,7 +48,7 @@ Content-Type: application/json
     { "role": "system", "content": "Translation instructions..." },
     { "role": "user", "content": "Text to translate..." }
   ],
-  "max_tokens": 1024,
+  "max_tokens": 20480,
   "stream": false
 }
 ```
@@ -121,7 +121,7 @@ claude --plugin-dir ./plugins/prompt-translator
 | HTTP 404 | 是否填了完整请求路径 |
 | HTTP 400 | 模型 ID、`max_tokens` 和 `reasoning_effort` 是否被接口接受；可把推理档位设为 `default` |
 | HTTP 429 | 检查服务额度或限流，稍后重试 |
-| 译文过长 | 缩短输入；本版本输出预算为 1024 tokens |
+| 译文过长 | 缩短输入；本版本输出预算为 20480 tokens |
 | 路径或代码标记未完整保留 | 模型没有完整保留标记；换翻译模型或缩短输入 |
 | 没有加载提示框 | 用 `claude plugin list` 检查插件状态；确认当前打开的是会话，不是后台任务列表 |
 | 出现 `Your conversation moved to the background` | 这是 Claude Code 的后台会话视图。选中对应会话按 Enter，或按 Esc 返回；普通会话可在 `/config` 关闭 `leftArrowOpensAgents` |

@@ -190,7 +190,7 @@ export function register(on: On, options: PluginOptions) {
             { role: "user", content: protectedText.text },
           ],
           ...(effort !== "default" ? { reasoning_effort: effort } : {}),
-          max_tokens: 1024,
+          max_tokens: 20480,
           stream: false,
         }),
       })
