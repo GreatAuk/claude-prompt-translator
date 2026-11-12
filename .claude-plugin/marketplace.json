@@ -8,7 +8,7 @@
       "name": "prompt-translator",
       "source": "./plugins/prompt-translator",
       "description": "Translate prompts before Claude Code using your own OpenAI-compatible API.",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ],
   "description": "Translate Claude Code prompts through a configurable external model API."
