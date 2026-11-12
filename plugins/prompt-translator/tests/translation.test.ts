@@ -138,7 +138,7 @@ test("animates the loading card and removes the completed preview", async ($, on
   expect((await submission).text).toBe("Change the button.")
   expect((await ui.find({ type: "Text", text: /翻译完成/ }))?.text).toContain("1.2 秒")
   expect((await ui.find({ type: "Text", text: "Change the button." }))?.text).toBe("Change the button.")
-  await clock.advance(3000)
+  await clock.advance(15000)
   expect(await ui.find({ type: "Text", text: /翻译完成/ })).toBe(undefined)
   await ui.unmount()
 })

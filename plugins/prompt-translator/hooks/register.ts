@@ -239,7 +239,7 @@ export function register(on: On, options: PluginOptions) {
         current.detail = translated ? translated.replace(/\s+/g, " ").slice(0, 180) : errorHint
         $.ui.invalidate("ui.render")
         if (translated) {
-          hideTimer = $.clock.after(3000, () => {
+          hideTimer = $.clock.after(15000, () => {
             if (feedback !== current) return
             feedback = undefined
             $.ui.invalidate("ui.render")
