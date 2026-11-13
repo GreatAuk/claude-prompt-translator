@@ -1,6 +1,6 @@
 {
   "name": "prompt-translator",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Translate prompts before Claude Code using your own OpenAI-compatible API.",
   "author": {
     "name": "Toy",
