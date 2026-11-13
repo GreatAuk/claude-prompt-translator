@@ -76,7 +76,7 @@ Reasoning effort:  low
 | `cn` | 简体中文 |
 | `fr` | 法文 |
 
-语言选项会同时控制提示词翻译和 Claude 的回复语言。修改后自动生效。
+语言选项控制提示词翻译的目标语言。开启 **Reply language hint**（默认关闭）后，还会要求 Claude 用目标语言回复。修改后自动生效。
 
 提交一句普通文本，例如“请简要介绍这个项目”。输入框上方会显示：
 
@@ -117,7 +117,7 @@ claude plugin disable prompt-translator@claude-prompt-translator
 - 提示词正文会发送到你配置的翻译服务；使用该服务的密钥和额度。
 - 路径、URL、行内代码和完整代码块会先替换成标记，翻译后原样放回。标记缺失时停止提交。
 - 即使输入已是目标语言，也会调用翻译接口，并要求原文返回。
-- Claude 的回复语言通过随提交附带的指令引导；插件不翻译 Claude 已生成的回答。
+- 开启 **Reply language hint** 时，Claude 的回复语言通过随提交附带的指令引导；插件不翻译 Claude 已生成的回答。
 - 动态提示框用于 Claude Code 终端的交互会话。`claude -p` 同样翻译，但不显示提示框。
 
 ## 更多说明

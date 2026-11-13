@@ -47,7 +47,7 @@ test("loads a plugin-local API key and sends the OpenAI-compatible request", asy
   on("prompt.submit", (_, e) => ({ text: e.text, context: e.context, origin: e.origin }))
   const result = await $.prompt.submit({ text: "修改按钮。保留 /tmp/demo.txt。", origin: { kind: "composer" }, wait: false })
   expect(result.text).toBe("Change the button. Keep /tmp/demo.txt.")
-  expect(result.context?.[0]).toContain("Reply in natural English")
+  expect(result.context).toBe(undefined)
 })
 
 test("accepts a provider response that resolves the requested model to an alias", async ($, on) => {
@@ -94,7 +94,7 @@ test("passes commands and empty prompts without a translation request", async ($
   }
 })
 
-test("routes Chinese, Japanese, French, and English input through the translator", async ($, on) => {
+test("routes Chinese, Japanese, French, and English input through the translator", { options: { reply_language: true } }, async ($, on) => {
   on("env.get", () => ({ value: "example-token" }))
   on("http.fetch", (_, e) => {
     const request = JSON.parse(e.init?.body ?? "{}")

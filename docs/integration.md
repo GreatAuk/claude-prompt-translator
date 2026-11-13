@@ -26,6 +26,7 @@ GLM 是本项目已完成真实调用验证的默认接入。网关和本地服�
 - **Translation model**：填写接口接受的模型 ID。
 - **API Key**：填写翻译服务密钥。
 - **Target language**：默认 `en`，可选 `jp / cn / fr`。
+- **Reply language hint**：默认关闭；开启后随每条译文附带“用目标语言回复”的指令。
 - **Reasoning effort**：默认 `low`；接口不支持时选 `default`。
 
 `/config` 也可以修改非敏感选项。语言变化自动重新加载插件，不需要反复手动启动。
