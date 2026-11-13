@@ -1,6 +1,6 @@
 {
   "name": "prompt-translator",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Translate prompts before Claude Code using your own OpenAI-compatible API.",
   "author": {
     "name": "Toy",
@@ -28,7 +28,7 @@
     "language": {
       "type": "string",
       "title": "Target language",
-      "description": "en: English; jp: Japanese; cn: Simplified Chinese; fr: French. Controls prompt translation and replies.",
+      "description": "en: English; jp: Japanese; cn: Simplified Chinese; fr: French. Controls prompt translation.",
       "options": [
         "en",
         "jp",
@@ -36,6 +36,12 @@
         "fr"
       ],
       "default": "en"
+    },
+    "reply_language": {
+      "type": "boolean",
+      "title": "Reply language hint",
+      "description": "Ask Claude to reply in the target language by attaching an instruction to each translated prompt.",
+      "default": false
     },
     "reasoning_effort": {
       "type": "string",

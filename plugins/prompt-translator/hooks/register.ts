@@ -102,6 +102,7 @@ export function register(on: On, options: PluginOptions) {
   const effort = typeof options.reasoning_effort === "string" ? options.reasoning_effort : "low"
   const code = languageCode(options.language)
   const target = LANGUAGES[code]
+  const replyHint = options.reply_language === true
   let feedback: Feedback | undefined
   let hideTimer: Timer | undefined
 
@@ -227,7 +228,9 @@ export function register(on: On, options: PluginOptions) {
       return next({
         ...e,
         text: translated,
-        context: [...(e.context ?? []), `Reply in natural ${target.name}. Keep commands, paths, URLs, identifiers, and product names unchanged.`],
+        context: replyHint
+          ? [...(e.context ?? []), `Reply in natural ${target.name}. Keep commands, paths, URLs, identifiers, and product names unchanged.`]
+          : e.context,
       })
     } catch {
       return { drop: FAILURE }
